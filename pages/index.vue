@@ -18,7 +18,6 @@
               rows="1"
               row-height="10"
               v-model="text_value"
-              v-on:keyup.enter="to_result_page"
               >
             </v-text-field>
           </div>
@@ -34,7 +33,7 @@
                   color="primary"
                   nuxt
                 >
-                  시작하기 ->
+                  시작하기
                 </v-btn>
               </router-link>
             </div>
@@ -45,7 +44,7 @@
                   nuxt
                   @click="to_result_page"
                 >
-                  시작하기 ->
+                  시작하기
                 </v-btn>
             </div>
             

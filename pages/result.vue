@@ -10,7 +10,18 @@
           </v-card-title>
           <div class="text-center justify-center margin_bottom">
             <img :src="`${image_path}`">
-          </div>    
+          </div>   
+          <div >
+              <router-link :to="{name:'index', params:{text_value:text_value}}">
+              <v-btn
+                class="margin_bottom"
+                color="primary"
+                nuxt
+              >
+                다시하기
+              </v-btn>
+            </router-link>
+          </div> 
         </v-card>
       </div>
     </v-col>
@@ -22,21 +33,17 @@ export default {
   data () {
     return {
       image_paths: [
-        "https://lh4.googleusercontent.com/tcgZrptaIUXfi_6Pqpuql8o-exdWYbinzsI6HHqQcOr6T9eGXLd-UPpJI9UtLuCIwDv_p4CuWAIzuwiUgpnT=w1365-h937",
-        "https://lh6.googleusercontent.com/qqUg07RNu6wIzvWVt2CSBWs5Tm-f-EZoG1FZR6iGL0yqDSYR41KFmbSFtAOEjn6HmNfmyMksFTl7-9FHA3yr=w1920-h937",
-        "https://lh3.googleusercontent.com/f50dODhDFAyLUfoXao5yt-cujmN7oNljA7QQgyr-pvjPswS8_zoBUGLrH5Qh7lJ5ZsluYU8Gkmiksrr2xgbU=w1365-h937" ,
-        "https://lh5.googleusercontent.com/Ya0vojt8HA6WYbwVeNREwKKiTvVx8GPm-xSBC49B7EuO6RD8BKH0mMtpLCXEh_8sgY0a3cr422CJ8ac5XObP=w1365-h937" ,
-        "https://lh4.googleusercontent.com/KE1sBdIC4Ipd4lEoexM25--vlU2F_hRmxg2xy-PtatNO5pbOMLLd72XONY84KvjgPuOyJG2LX3ruI3q8ow__=w1365-h937" ,
-        "https://lh4.googleusercontent.com/1plYnLmnu6Z6HdVEKSB0oxISucDevkkZQNvRXw45eNKQvtHSoHjq8Njx0CX_KOxoXmVFIYQ_pyb1ojQi5LmD=w1365-h937" ,
-        "https://lh4.googleusercontent.com/B1oLGIiCnNemtnvDrtccYkO6nYazRXE4hsRuES4uFPfb5S9mdh5Y0dwoowviwF6q29TM6rQO9Mcyuc_6FhLr=w1365-h937" ,
-        "https://lh3.googleusercontent.com/j8E8Ik_TK0T__OYg0uB3SZBsI6wZyIZe_PGQJS7jBOEGizteyh3Uco9aFE4My3N2nknL8aVcN8RYNOuE07R7=w1365-h937" ,
-        "https://lh4.googleusercontent.com/9HlWHPF67K1YXRMe23JG0tXwE9O4sGKHH6oF3qLX9UMwhIDaD9PZw7qvxVBoXBCRLGjuH_YT0tfdb80BRzOF=w1365-h937" ,
-        "https://lh3.googleusercontent.com/9bZu8OgbvgJStEL3AHobE37Lv5GCS3Sw65fgq4pYpcWFkXZh9uJOu7G7epdpM7exv1gMnhjEYGrI4yAS8IHC=w1365-h937" ,
-        "https://lh3.googleusercontent.com/hJs_IlBzZKyXaxvVMU6zvHh4gXYlkbtp-hbQgSOZUwFvvQ5c53fY2QJM7asUmMhf08XkR4IGk5f6zCXQPpzD=w1365-h937" ,
-        "https://lh3.googleusercontent.com/eRzY6PMS1CE4LxlZ0WQ0cFgX4RievlW6Dae23Vb52nOWc84QKEiokPDN7QOVgSWeZDovgAfFPmRxcUlWuRsv=w1365-h937" ,
-        "https://lh5.googleusercontent.com/23EhE3OLXke9ktUpEMl0Hv4ztl-Soj4N45vdpPexhTSX1cixldylGPvubGJqQgpErk420kq3rtF8OWTdNsqf=w1365-h937" ,
-        "https://lh5.googleusercontent.com/4Y-T6MjTWeA2n-NzcuWvioxGyef62NSCsxjaZ9nTGgfSQcK3Osa24E5vTDHuVxxGGF1mALfbSSoGz3r6EHVV=w1365-h937" ,
-        "https://lh3.googleusercontent.com/T1CgEzCM4rnuyF9e5V_rDNRGVsIVos7AITP82E1GHrbjMPIEyIqdjr_vyw9BewSAPeab6FG7lwSbF21o3RCE=w1365-h937" ,
+        "https://lh5.googleusercontent.com/pSBPdrgWE8CGg9fD5mwSs90-5M-nyHg3MG88mEFCdhp35xStRboh3sBvHw95QAgtkFwfv_XOFKxg0lglLY3-=w1920-h937",
+        "https://lh4.googleusercontent.com/_OqyYLkdX7AcnF2tBYFS-3ev-ROFS0PP3CBmEqHsHm9gMm_lpAinif2ydjW53XgapDS-36T_7twjvGgGypEO=w1920-h937",
+        "https://lh6.googleusercontent.com/G5YlkNYGXlFPZ6eHlhAzgJjHw6Ie5iUnEl47jsd4siYwdc2pjj2NT3CIDpCe5bkTY-xTV7vE0QKUmt4_u0ru=w1920-h937",
+        "https://lh4.googleusercontent.com/tMEHKnds5GkVgmkvEenM9Y0BKBu1v4yUiIRWHmM1QQlv4Uvg992XlGnLfHYpEDQrGVDjU1rzz1VO7LhTXrXX=w1920-h937",
+        "https://lh3.googleusercontent.com/vGpG7yta_ZTv1SiIROntlMLwVmU9iRoNF1pMLIAz6pb2Iv8cwwQxQ4EZq1EcMIh_xscOz97yuonI3mUEk9Yo=w1920-h937",
+        "https://lh3.googleusercontent.com/MnGNOOjyVXoXB6F67LYZewP9AiwrwYDXA0Nbem3O7kIMIZ-WS_A4SSftCN7hKIVz-CCWy166bEiS10e5CcRM=w1920-h937",
+        "https://lh4.googleusercontent.com/mQP17FI9fEL0tqp8AJbOICSQAmqCrj688g_ZBW_l3CRO0b6KZ9p6vtRsNTvl_wGA1viBFuni9F5CC2EBog4-=w1920-h937",
+        "https://lh5.googleusercontent.com/wM-aTMBtYu_7PsDcZALO2UuXKLbuO0BovCwOvHbT2FRvxf3MFTZ6b-LIKo2guXRaH1XKqnJqHwj4QFtbENZN=w1920-h937" ,
+        "https://lh4.googleusercontent.com/Ql-FBjbFwp4nDsLjdi5zU4lEG2xC1qvT2SwxKk0qQ_6LW1K3F3i5NAMQ7tu7-rDY2aHeAhZNjPlp4GR0JGEa=w1920-h937" ,
+        "https://lh5.googleusercontent.com/aEYRGMNOUV0If9rInQchaT6X6OIMD6dJUYTTw_AJrf8cP_iTd0EpIJvxleUjdz_lPm8n5dyRUrFthYRGoBd8=w1920-h937" ,
+
       ],
       image_path: ''
     }
