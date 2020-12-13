@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     to_result_page: function(event) {
-        alert("한 글자라도 입력해주세요")
+        alert("이름을 입력해주세요!")
     },
   }
 };

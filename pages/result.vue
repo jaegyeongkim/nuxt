@@ -1,8 +1,6 @@
 <template>
   <v-row justify="center" align="center">
     <v-col  cols="12" sm="8" md="6">
-      
-      
       <div class="text-center" >
         <v-card class="text-center justify-center">
           <v-card-title class="heacdline">
@@ -22,7 +20,7 @@
             <img v-if="id == 10" src="~/assets/images/15.png" class="image_size">
           </div>   
           <div >
-              <router-link :to="{name:'index', params:{text_value:text_value}}">
+              <router-link>
               <v-btn
                 class="margin_bottom"
                 color="primary"
@@ -34,7 +32,6 @@
           </div> 
         </v-card>
       </div>
-
     </v-col>
   </v-row>
 </template>
@@ -53,7 +50,6 @@ export default {
     fetchData() {
       const paths_length = 11
       this.id = Math.floor((Math.random()*paths_length))
-      
       console.log(this.id)
     }
   }
@@ -66,7 +62,7 @@ export default {
       margin-bottom:10px;
     }
     .image_size{
-      height: 400px;
+      height: 300px;
       width: 600px;
     }
 </style>
