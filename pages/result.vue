@@ -9,7 +9,17 @@
             신이 {{ $route.params.text_value }}을(를) 만들 때..
           </v-card-title>
           <div class="text-center justify-center margin_bottom">
-            <img :src="`${image_path}`">
+            <img v-if="id == 0" src="~/assets/images/2.png" class="image_size">
+            <img v-if="id == 1" src="~/assets/images/3.png" class="image_size">
+            <img v-if="id == 2" src="~/assets/images/4.png" class="image_size">
+            <img v-if="id == 3" src="~/assets/images/6.png" class="image_size">
+            <img v-if="id == 4" src="~/assets/images/7.png" class="image_size">
+            <img v-if="id == 5" src="~/assets/images/8.png" class="image_size">
+            <img v-if="id == 6" src="~/assets/images/9.png" class="image_size">
+            <img v-if="id == 7" src="~/assets/images/10.png" class="image_size">
+            <img v-if="id == 8" src="~/assets/images/13.png" class="image_size">
+            <img v-if="id == 9" src="~/assets/images/14.png" class="image_size">
+            <img v-if="id == 10" src="~/assets/images/15.png" class="image_size">
           </div>   
           <div >
               <router-link :to="{name:'index', params:{text_value:text_value}}">
@@ -24,6 +34,7 @@
           </div> 
         </v-card>
       </div>
+
     </v-col>
   </v-row>
 </template>
@@ -32,20 +43,7 @@
 export default {
   data () {
     return {
-      image_paths: [
-        "https://lh5.googleusercontent.com/pSBPdrgWE8CGg9fD5mwSs90-5M-nyHg3MG88mEFCdhp35xStRboh3sBvHw95QAgtkFwfv_XOFKxg0lglLY3-=w1920-h937",
-        "https://lh4.googleusercontent.com/_OqyYLkdX7AcnF2tBYFS-3ev-ROFS0PP3CBmEqHsHm9gMm_lpAinif2ydjW53XgapDS-36T_7twjvGgGypEO=w1920-h937",
-        "https://lh6.googleusercontent.com/G5YlkNYGXlFPZ6eHlhAzgJjHw6Ie5iUnEl47jsd4siYwdc2pjj2NT3CIDpCe5bkTY-xTV7vE0QKUmt4_u0ru=w1920-h937",
-        "https://lh4.googleusercontent.com/tMEHKnds5GkVgmkvEenM9Y0BKBu1v4yUiIRWHmM1QQlv4Uvg992XlGnLfHYpEDQrGVDjU1rzz1VO7LhTXrXX=w1920-h937",
-        "https://lh3.googleusercontent.com/vGpG7yta_ZTv1SiIROntlMLwVmU9iRoNF1pMLIAz6pb2Iv8cwwQxQ4EZq1EcMIh_xscOz97yuonI3mUEk9Yo=w1920-h937",
-        "https://lh3.googleusercontent.com/MnGNOOjyVXoXB6F67LYZewP9AiwrwYDXA0Nbem3O7kIMIZ-WS_A4SSftCN7hKIVz-CCWy166bEiS10e5CcRM=w1920-h937",
-        "https://lh4.googleusercontent.com/mQP17FI9fEL0tqp8AJbOICSQAmqCrj688g_ZBW_l3CRO0b6KZ9p6vtRsNTvl_wGA1viBFuni9F5CC2EBog4-=w1920-h937",
-        "https://lh5.googleusercontent.com/wM-aTMBtYu_7PsDcZALO2UuXKLbuO0BovCwOvHbT2FRvxf3MFTZ6b-LIKo2guXRaH1XKqnJqHwj4QFtbENZN=w1920-h937" ,
-        "https://lh4.googleusercontent.com/Ql-FBjbFwp4nDsLjdi5zU4lEG2xC1qvT2SwxKk0qQ_6LW1K3F3i5NAMQ7tu7-rDY2aHeAhZNjPlp4GR0JGEa=w1920-h937" ,
-        "https://lh5.googleusercontent.com/aEYRGMNOUV0If9rInQchaT6X6OIMD6dJUYTTw_AJrf8cP_iTd0EpIJvxleUjdz_lPm8n5dyRUrFthYRGoBd8=w1920-h937" ,
-
-      ],
-      image_path: ''
+      id: 0
     }
   },
   created() {
@@ -53,9 +51,10 @@ export default {
   },
   methods: {
     fetchData() {
-      const paths_length = this.image_paths.length-1
-      const id = Math.floor((Math.random()*paths_length))
-      this.image_path = this.image_paths[id]
+      const paths_length = 11
+      this.id = Math.floor((Math.random()*paths_length))
+      
+      console.log(this.id)
     }
   }
 };
@@ -65,5 +64,9 @@ export default {
 <style>
     .margin_bottom {
       margin-bottom:10px;
+    }
+    .image_size{
+      height: 400px;
+      width: 600px;
     }
 </style>

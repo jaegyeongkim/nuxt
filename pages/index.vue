@@ -33,7 +33,7 @@
                   color="primary"
                   nuxt
                 >
-                  시작하기
+                  검사하기
                 </v-btn>
               </router-link>
             </div>
@@ -44,7 +44,7 @@
                   nuxt
                   @click="to_result_page"
                 >
-                  시작하기
+                  검사하기
                 </v-btn>
             </div>
             
